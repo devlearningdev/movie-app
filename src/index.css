@@ -42,9 +42,9 @@ code {
 .movie-img {
   max-width: 300px;
   max-height: 300px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: -20px;
+  margin-top: -18px;
 }
 
 .movie-card {
@@ -55,13 +55,13 @@ code {
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.738);
   transition: transform 0.3s;
   background-color: rgba(0, 0, 0, 0.116);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .movie-card:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.1);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.05);
   box-shadow: 1px 1px 50px 25px rgba(0, 0, 0, 0.42);
 }
 
