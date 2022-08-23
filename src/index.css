@@ -79,8 +79,6 @@ code {
   );
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.628);
   border-bottom: 1px solid rgba(255, 255, 255, 0.037);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 
   /*Sticky Navbar*/
 
@@ -446,6 +444,10 @@ h3 {
 
     max-width: 700px;
   }
+  input {
+    width: 80%;
+    font-size: 17px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -482,6 +484,10 @@ h3 {
     margin-left: 2%;
     margin-right: 2%;
   }
+  input {
+    width: 80%;
+    font-size: 17px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -502,15 +508,15 @@ h3 {
   }
 
   .logo {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .navbar {
-    height: 40px;
+    height: 50px;
   }
 
   li {
-    height: 40px;
+    height: 50px;
     width: 60px;
   }
 
@@ -522,6 +528,11 @@ h3 {
 
   .title-div {
     font-size: 14px;
+  }
+
+  input {
+    width: 80%;
+    font-size: 17px;
   }
 }
 

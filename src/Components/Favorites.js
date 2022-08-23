@@ -5,7 +5,7 @@ function Favorites() {
   return (
     <div>
       <Navbar />
-      <h1>Favorites</h1>
+      <h1>Favoritesssss</h1>
     </div>
   );
 }
