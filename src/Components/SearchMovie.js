@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import Card from "./Card";
 
 const SearchMovie = () => {
   const [movieList, setMovieList] = React.useState([]);
@@ -9,7 +10,6 @@ const SearchMovie = () => {
   const [request, setRequest] = React.useState("");
 
   function handleChange(event) {
-    console.log(request);
     return setRequest(event.target.value);
   }
   //Envoyer la requête à l'API
@@ -21,18 +21,8 @@ const SearchMovie = () => {
       .then((res) => setMovieList(res.data.results));
   });
 
-  //Afficher la requête
-  const showMovieList = movieList.map((item) => {
-    return (
-      <div key={item.id} className="search-movie-card ">
-        <img
-          src={
-            item.poster_path &&
-            `https://image.tmdb.org/t/p/w500/${item.poster_path}`
-          }
-        ></img>
-      </div>
-    );
+  const movieToShow = movieList.map((item) => {
+    return <Card key={item.id} item={item} />;
   });
 
   return (
@@ -48,9 +38,17 @@ const SearchMovie = () => {
 
         <div className={!request && "search-div"}>
           <div className="title-div">
-            <h2>Results for "{request}":</h2>
+            {movieList.length > 0 ? (
+              <h2>Results for "{request}":</h2>
+            ) : (
+              <h2>Sorry, no results for "{request}"</h2>
+            )}
           </div>
-          <div className="search-movies-container">{showMovieList}</div>
+          {movieList.length > 0 ? (
+            <div className="search-movies-container">{movieToShow}</div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

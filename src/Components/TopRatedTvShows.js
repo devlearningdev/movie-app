@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Card from "./Card";
 
 const TopRatedTvShows = () => {
   const [topRated, setTopRated] = React.useState([]);
@@ -12,31 +13,17 @@ const TopRatedTvShows = () => {
       .then((res) => setTopRated(res.data.results));
   }, []);
 
-  const movieTitle = topRated.map((item) => {
-    return (
-      <div key={item.id} className="movie-card ">
-        <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}></img>
-        <p
-          className={
-            item.vote_average >= 7.5
-              ? "note-green"
-              : item.vote_average <= 7.5 && item.vote_average >= 6
-              ? "note-orange"
-              : "note-red"
-          }
-        >
-          {item.vote_average.toFixed(1)}/10
-        </p>
-      </div>
-    );
+  //MAP
+  const movieToShow = topRated.map((item) => {
+    return <Card key={item.id} item={item} />;
   });
 
   return (
     <div className="top-rated-container">
       <div className="title-div">
-        <h3>⭐ TMDB Top Rated</h3>
+        <h3>⭐ Top Rated</h3>
       </div>
-      <div className="trending-movies-container">{movieTitle}</div>
+      <div className="trending-movies-container">{movieToShow}</div>
     </div>
   );
 };

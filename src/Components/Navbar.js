@@ -1,7 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const [isActive, setIsactive] = React.useState(true);
+
+  function toggle() {
+    setIsactive((previousValue) => !previousValue);
+  }
+
   return (
     <div className="navbar">
       <NavLink className="" id="navlink" to="/">
@@ -14,7 +22,7 @@ const Navbar = () => {
           id="navlink"
           to="/"
         >
-          <li className="test">Home</li>
+          <li>Home</li>
         </NavLink>
         <NavLink
           className={(nav) => nav.isActive && "textColor"}
@@ -22,6 +30,16 @@ const Navbar = () => {
           to="/search-movie"
         >
           <li>Search</li>
+        </NavLink>
+        <NavLink
+          className={(nav) => nav.isActive && "textColor"}
+          id="navlink"
+          to="/favorite-movies"
+        >
+          {" "}
+          <li>
+            <FontAwesomeIcon icon={faBookmark}></FontAwesomeIcon>
+          </li>
         </NavLink>
       </ul>
     </div>
