@@ -488,6 +488,20 @@ h3 {
     width: 80%;
     font-size: 17px;
   }
+
+  .movie-card:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1);
+    box-shadow: 1px 1px 50px 25px rgba(0, 0, 0, 0.42);
+  }
+
+  .search-movie-card:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1);
+    box-shadow: 1px 1px 10px 1px rgb(71, 71, 71);
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -533,6 +547,24 @@ h3 {
   input {
     width: 80%;
     font-size: 17px;
+  }
+
+  .parent {
+    margin: 1rem 1rem;
+  }
+
+  .movie-card:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1);
+    box-shadow: 1px 1px 50px 25px rgba(0, 0, 0, 0.42);
+  }
+
+  .search-movie-card:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1);
+    box-shadow: 1px 1px 10px 1px rgb(71, 71, 71);
   }
 }
 
