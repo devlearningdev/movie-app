@@ -21,6 +21,8 @@ const Card = (props) => {
     });
   }
 
+  // Mise en favoris
+
   const [isFavorite, setIsFavorite] = React.useState(Boolean);
 
   function handleFavorite() {
@@ -52,7 +54,8 @@ const Card = (props) => {
             : "note-red"
         }
       >
-        {props.item.vote_average.toFixed(1)}/10
+        {props.item.vote_average.toFixed(1)}
+        <span className="over-ten"> /10</span>
       </p>
     </div>
   );
