@@ -27,6 +27,8 @@ const Card = (props) => {
 
   function handleFavorite() {
     setIsFavorite((previousValue) => !previousValue);
+    console.log(props.item.id);
+    console.log(props.item.name || props.item.title);
   }
 
   // // // // // // // // // // // // // // // // // // // // // //////
