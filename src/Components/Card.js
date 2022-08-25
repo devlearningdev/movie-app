@@ -23,12 +23,10 @@ const Card = (props) => {
 
   // Mise en favoris
 
-  const [isFavorite, setIsFavorite] = React.useState(Boolean);
+  const [isFavorite, setIsFavorite] = React.useState(Boolean); // State stylistique
 
-  function handleFavorite() {
-    setIsFavorite((previousValue) => !previousValue);
-    console.log(props.item.id);
-    console.log(props.item.name || props.item.title);
+  function handleBookmarkColor() {
+    setIsFavorite((previousValue) => !previousValue); // bookmark style from gray to yellow
   }
 
   // // // // // // // // // // // // // // // // // // // // // //////
@@ -37,7 +35,7 @@ const Card = (props) => {
     <div key={props.item.id} className="movie-card">
       <FontAwesomeIcon
         icon={faBookmark}
-        onClick={handleFavorite}
+        onClick={handleBookmarkColor}
         className={isFavorite ? "star-favorite" : "bookmark"}
       ></FontAwesomeIcon>
       <img

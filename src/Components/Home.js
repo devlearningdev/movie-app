@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import HeroBanner from "./HeroBanner";
 import Navbar from "./Navbar";
 import TopRatedTvShows from "./TopRatedTvShows";
@@ -13,6 +14,7 @@ const Home = () => {
       <TrendingMovies />
       <UpcomingMovies />
       <TopRatedTvShows />
+      <Footer />
     </div>
   );
 };
