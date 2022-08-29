@@ -30,8 +30,8 @@ code {
   padding: 20px;
   overflow: scroll;
   overflow-y: hidden;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
   background-color: #202020;
   border-radius: 10px;
   border: 1.5px solid;
@@ -91,8 +91,8 @@ code {
 .title-div {
   display: flex;
   margin-top: 20px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
 ::-webkit-scrollbar {
@@ -246,7 +246,7 @@ input:focus {
 
 .note-green {
   color: rgba(0, 255, 0, 0.49);
-  background-color: rgba(31, 31, 31, 0.285);
+  background-color: rgba(14, 14, 14, 0.285);
   padding: 3px;
 
   border: 1px solid rgba(255, 255, 255, 0.093);
@@ -256,7 +256,7 @@ input:focus {
 
 .note-red {
   color: rgb(255, 0, 0);
-  background-color: rgba(31, 31, 31, 0.285);
+  background-color: rgba(14, 14, 14, 0.285);
   padding: 3px;
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.093);
@@ -265,7 +265,7 @@ input:focus {
 
 .note-orange {
   color: rgb(255, 166, 0);
-  background-color: rgba(31, 31, 31, 0.285);
+  background-color: rgba(14, 14, 14, 0.285);
   padding: 3px;
   border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.093);
