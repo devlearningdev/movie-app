@@ -55,7 +55,7 @@ const Card = (props) => {
         }
       >
         {props.item.vote_average.toFixed(1)}
-        <span className="over-ten"> /10</span>
+        <span className="over-ten"></span>
       </p>
     </div>
   );
