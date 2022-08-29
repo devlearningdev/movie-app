@@ -22,7 +22,9 @@ const SearchMovie = () => {
   });
 
   const movieToShow = movieList.map((item) => {
-    return <Card key={item.id} item={item} />;
+    if (item.poster_path) {
+      return <Card key={item.id} item={item} />;
+    }
   });
 
   return (
