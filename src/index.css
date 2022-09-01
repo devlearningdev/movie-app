@@ -166,7 +166,7 @@ li:hover {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
   margin: auto;
   background-color: #202020;
   border-radius: 10px;

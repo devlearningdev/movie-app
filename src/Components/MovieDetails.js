@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import TrendingMovies from "./TrendingMovies";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -35,6 +36,7 @@ const MovieDetails = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
