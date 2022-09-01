@@ -1,7 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
-
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /*background-color: #181818;*/
   background-color: rgba(0, 0, 0, 0.98);
+
   /*background: rgb(122, 203, 240);
   background: linear-gradient(
     260deg,
@@ -33,10 +34,24 @@ code {
   margin-left: 7%;
   margin-right: 7%;
   background-color: #202020;
+
   border-radius: 10px;
   border: 1.5px solid;
   border-color: rgba(55, 55, 55, 0.599);
   box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.738);
+}
+
+.favorite-movies-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-left: 7%;
+  margin-right: 7%;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.104);
+  justify-content: center;
+  background-color: #202020;
 }
 
 .movie-img {
@@ -55,6 +70,7 @@ code {
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.738);
   transition: transform 0.3s;
   background-color: rgba(0, 0, 0, 0.116);
+
   border: 1px solid rgba(0, 0, 0, 0.664);
   border-radius: 5px;
 }
@@ -69,15 +85,16 @@ code {
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 60px;
   width: 100%;
-  /*background-color: #202020;*/
   background: rgb(32, 32, 32);
   background: linear-gradient(
     180deg,
     rgba(32, 32, 32, 1) 43%,
     rgba(32, 32, 32, 0.7763480392156863) 100%
   );
+
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.628);
   border-bottom: 1px solid rgba(255, 255, 255, 0.037);
 
@@ -116,15 +133,12 @@ ul {
 }
 
 li {
-  /*border-radius: 5px;
-  border: 1.5px solid;
-   border-color: rgba(55, 55, 55, 0.599);*/
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   cursor: default;
-  color: white;
+  color: rgba(255, 255, 255, 0.894);
   cursor: pointer;
   height: 60px;
   width: 100px;
@@ -132,7 +146,7 @@ li {
 
 li:hover {
   color: rgb(156, 156, 156);
-  background-color: rgba(255, 255, 255, 0.048);
+  /*background-color: rgba(255, 255, 255, 0.048);*/
   border-radius: 10px;
 }
 
@@ -223,7 +237,7 @@ input:focus {
 
 .textColor {
   /*background-color: #36363657;*/
-  background-color: #181818;
+  background-color: #3c3c3c3d;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   /*border: 1px solid rgba(96, 96, 96, 0.17);*/
@@ -234,6 +248,7 @@ input:focus {
 
 .logo {
   margin-left: 30px;
+  color: rgba(255, 255, 255, 0.894);
 }
 
 /*.note {
@@ -249,7 +264,7 @@ input:focus {
   background-color: rgba(14, 14, 14, 0.285);
   padding: 3px;
 
-  border: 1px solid rgba(255, 255, 255, 0.093);
+  border: 1px solid rgba(255, 255, 255, 0.064);
   border-radius: 2px;
   margin: 0.25rem auto;
 }
@@ -259,7 +274,7 @@ input:focus {
   background-color: rgba(14, 14, 14, 0.285);
   padding: 3px;
   border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.093);
+  border: 1px solid rgba(255, 255, 255, 0.064);
   margin: 0.25rem auto;
 }
 
@@ -268,7 +283,7 @@ input:focus {
   background-color: rgba(14, 14, 14, 0.285);
   padding: 3px;
   border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.093);
+  border: 1px solid rgba(255, 255, 255, 0.064);
   margin: 0.25rem auto;
 }
 
@@ -377,8 +392,22 @@ h3 {
   justify-content: center;
   align-items: center;
   background: rgb(32, 32, 32);
-  color: rgba(255, 255, 255, 0.561);
+  color: rgba(255, 255, 255, 0.219);
   margin-top: 8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.057);
+}
+
+.remove-cross {
+  cursor: pointer;
+  z-index: 0;
+  color: rgba(75, 75, 75, 0.677);
+  font-size: 20px;
+  align-self: flex-end;
+  margin-right: 5px;
+}
+
+.remove-cross:hover {
+  color: red;
 }
 
 /* //////////////////// MEDIA QUERIES ////////////////////////*/
@@ -473,6 +502,10 @@ h3 {
 }
 
 @media screen and (max-width: 600px) {
+  .logo {
+    font-size: 20px;
+  }
+
   .trending-movies-container {
     padding: 10px;
     margin-left: 2%;
@@ -527,7 +560,7 @@ h3 {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   .movie-img {
     max-width: 100px;
   }
@@ -612,7 +645,7 @@ h3 {
   }
 
   .logo {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .navbar {

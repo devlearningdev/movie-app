@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
 import Card from "./Card";
+import Footer from "./Footer";
 
 const SearchMovie = () => {
   const [movieList, setMovieList] = React.useState([]);

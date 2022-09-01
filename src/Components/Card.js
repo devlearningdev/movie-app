@@ -3,6 +3,7 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { FavoriteContext } from "../Context";
 
 const Card = (props) => {
   //Navigation vers "/movie-details":
@@ -21,12 +22,19 @@ const Card = (props) => {
     });
   }
 
-  // Mise en favoris
+  // Mise en favoris.
+
+  const { addToFavorites } = React.useContext(FavoriteContext); // useContext
 
   const [isFavorite, setIsFavorite] = React.useState(Boolean); // State stylistique
 
+  //Handling click on bookmark.
   function handleBookmarkColor() {
     setIsFavorite((previousValue) => !previousValue); // bookmark style from gray to yellow
+
+    {
+      !isFavorite && addToFavorites(props.item);
+    }
   }
 
   // // // // // // // // // // // // // // // // // // // // // //////
