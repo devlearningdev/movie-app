@@ -24,7 +24,7 @@ const Card = (props) => {
 
   // Mise en favoris.
 
-  const { addToFavorites } = React.useContext(FavoriteContext); // useContext
+  const { addToFavorites } = React.useContext(FavoriteContext);
 
   const [isFavorite, setIsFavorite] = React.useState(Boolean); // State stylistique
 
@@ -32,9 +32,10 @@ const Card = (props) => {
   function handleBookmarkColor() {
     setIsFavorite((previousValue) => !previousValue); // bookmark style from gray to yellow
 
-    {
-      !isFavorite && addToFavorites(props.item);
+    if (isFavorite === false) {
+      addToFavorites(props.item);
     }
+    //!isFavorite && addToFavorites(props.item);
   }
 
   // // // // // // // // // // // // // // // // // // // // // //////

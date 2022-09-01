@@ -7,8 +7,16 @@ import Footer from "./Footer";
 const SearchMovie = () => {
   const [movieList, setMovieList] = React.useState([]);
 
-  //Récupérer la requête
-  const [request, setRequest] = React.useState("");
+  //Récupérer la requête et la sauvegarder au refresh
+  const [request, setRequest] = React.useState(() => {
+    const saved = localStorage.getItem("request");
+    const initialValue = JSON.parse(saved);
+    return initialValue;
+  });
+
+  React.useEffect(() => {
+    localStorage.setItem("request", JSON.stringify(request));
+  }, [request]);
 
   function handleChange(event) {
     return setRequest(event.target.value);
@@ -42,9 +50,9 @@ const SearchMovie = () => {
         <div className={!request && "search-div"}>
           <div className="title-div">
             {movieList.length > 0 ? (
-              <h2>Results for "{request}":</h2>
+              <h3 className="title.div">Results for "{request}":</h3>
             ) : (
-              <h2>Sorry, no results for "{request}"</h2>
+              <h3 className="title.div">Sorry, no results for "{request}"</h3>
             )}
           </div>
           {movieList.length > 0 ? (

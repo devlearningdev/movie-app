@@ -7,19 +7,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Favorites() {
   const { favoriteArray } = React.useContext(FavoriteContext);
+  const { removeFromFavorites } = React.useContext(FavoriteContext);
 
   ////////////////////////////////////////////////////////////////////////////
 
   const favoritedMovies = favoriteArray.map((item) => {
-    // delete a specific favorite:
-
+    // delete a favorited:
     function handleRemove() {
       console.log(item.movie.id);
-      favoriteArray.pop();
+      //favoriteArray.pop();
+      removeFromFavorites();
     }
 
     //Displaying array of favorites:
-
     return (
       <div className="movie-card">
         <FontAwesomeIcon

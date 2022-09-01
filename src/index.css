@@ -167,15 +167,14 @@ li:hover {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  max-width: 1600px;
   margin: auto;
   background-color: #202020;
   border-radius: 10px;
   border: 1.5px solid;
   border-color: rgba(55, 55, 55, 0.599);
   box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.738);
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 7%;
+  margin-left: 7%;
 }
 
 .search-movie-card {
@@ -436,6 +435,11 @@ h3 {
     margin-right: 5%;
   }
 
+  .search-movies-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
   .div1 {
     max-width: 400px;
   }
@@ -508,6 +512,11 @@ h3 {
 
   .trending-movies-container {
     padding: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .search-movies-container {
     margin-left: 2%;
     margin-right: 2%;
   }
