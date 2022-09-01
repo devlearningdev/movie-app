@@ -36,7 +36,6 @@ const MovieDetails = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -166,7 +166,7 @@ li:hover {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
+  padding: 0.3rem;
   margin: auto;
   background-color: #202020;
   border-radius: 10px;
@@ -369,6 +369,11 @@ h3 {
   font-size: 20px;
   align-self: flex-end;
   margin-right: 5px;
+  /*transition: width 2s, height 2s, background-color 2s, transform 1s;
+  transform: rotate(360deg);*/
+  transition-duration: 0.5s;
+  transition-property: color rotate;
+  transform: scale(1.2) rotate(360deg);
 }
 
 .bookmark {
@@ -378,6 +383,7 @@ h3 {
   font-size: 20px;
   align-self: flex-end;
   margin-right: 5px;
+  transition: width 1s, height 1s, background-color 1s, transform 1s;
 }
 
 .bookmark:hover {

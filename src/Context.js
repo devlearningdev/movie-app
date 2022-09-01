@@ -4,6 +4,7 @@ export const FavoriteContext = React.createContext();
 
 export default function FavoriteProvider({ children }) {
   const [favoriteArray, setFavoriteArray] = React.useState([]); //array receiving bookmarked movies by user.
+  const [favoritedMovies, setFavoritedMovies] = React.useState([]);
 
   //function adding bookmarked movies into the array.
   function addToFavorites(movie) {
@@ -18,7 +19,12 @@ export default function FavoriteProvider({ children }) {
 
   return (
     <FavoriteContext.Provider
-      value={{ favoriteArray, addToFavorites, removeFromFavorites }}
+      value={{
+        favoriteArray,
+        addToFavorites,
+        removeFromFavorites,
+        favoritedMovies,
+      }}
     >
       {children}
     </FavoriteContext.Provider>
