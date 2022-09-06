@@ -1,7 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  height: 100vh;
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -276,6 +276,10 @@ input:focus {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.reviews-word {
+  cursor: pointer;
+}
+
 .note-green {
   color: rgba(0, 255, 0, 0.49);
   background-color: rgba(14, 14, 14, 0.285);
@@ -363,9 +367,14 @@ h3 {
   color: rgba(255, 255, 255, 0.843);
 }
 
+.guillemet {
+  font-size: 25px;
+}
+
 .reviews-container {
   display: flex;
-  background-color: #202020;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   border: 1.5px solid;
   border-color: rgba(55, 55, 55, 0.599);
@@ -373,6 +382,39 @@ h3 {
   color: rgba(255, 255, 255, 0.843);
   max-width: 1100px;
   margin: 3rem auto;
+  overflow: auto;
+  max-height: 500px;
+  margin-bottom: 3rem;
+}
+
+fieldset {
+  margin: 0.5rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.763);
+  border-color: rgba(155, 155, 155, 0.58);
+  border-width: 1px;
+  background-color: #202020;
+}
+
+.review-note-green {
+  border: 1px solid rgba(255, 255, 255, 0.733);
+  padding: 0px 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 255, 0, 0.49);
+}
+
+.review-note-orange {
+  border: 1px solid rgba(255, 255, 255, 0.733);
+  padding: 0px 5px;
+  border-radius: 10px;
+  background-color: rgb(255, 166, 0);
+}
+
+.review-note-red {
+  border: 1px solid rgba(255, 255, 255, 0.733);
+  padding: 0px 5px;
+  border-radius: 10px;
+  background-color: rgb(255, 0, 0);
 }
 
 .trailer-container {
