@@ -18,6 +18,7 @@ const Card = (props) => {
         overview: props.item.overview,
         rating: props.item.vote_average,
         reviewNumber: props.item.vote_count,
+        releaseDate: props.item.release_date || props.item.first_air_date,
       },
     });
   }

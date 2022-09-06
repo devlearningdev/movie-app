@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*background-color: #181818;*/
-  background-color: rgba(0, 0, 0, 0.98);
+  background-color: rgba(0, 0, 0, 0.833);
 
   /*background: rgb(122, 203, 240);
   background: linear-gradient(
@@ -38,7 +38,7 @@ code {
   border-radius: 10px;
   border: 1.5px solid;
   border-color: rgba(55, 55, 55, 0.599);
-  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.738);
+  box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.738);
 }
 
 .favorite-movies-container {
@@ -385,10 +385,22 @@ h3 {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   cursor: pointer;
+  max-height: 400px;
+  overflow: auto;
 }
 
 .trailer-container:hover {
   background-color: rgba(57, 57, 57, 0.992);
+}
+
+.no-trailer-container {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+  color: rgb(77, 77, 77);
+  cursor: not-allowed;
 }
 
 .div1 {
@@ -467,6 +479,7 @@ h3 {
 
 .youtube-content {
   border-radius: 10px;
+  margin: 0.2rem 0rem;
 }
 
 .grayish-text {

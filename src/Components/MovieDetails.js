@@ -12,7 +12,6 @@ const MovieDetails = () => {
   const [trailers, setTrailers] = React.useState([]);
   const [showReviews, setShowReviews] = React.useState(false);
   const [showTrailer, setShowTrailer] = React.useState(false);
-  //const [watchProvider, setWatchProvider] = React.useState([]);
 
   React.useEffect(() => {
     axios
@@ -25,7 +24,7 @@ const MovieDetails = () => {
   const officialTrailer = trailers.map((item) => {
     {
       return (
-        item.name.match(/^Official Trailer$/) && (
+        item.type === "Trailer" && (
           <iframe
             width="100%"
             height="350"
@@ -40,25 +39,6 @@ const MovieDetails = () => {
       );
     }
   });
-
-  /* React.useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${location.state.id}/watch/providers?api_key=b28a53f206c15a63a8c1de7477017045`
-      )
-      .then((res) => console.log(setWatchProvider(res.data.results.US.buy)));
-  }, []);
-
-  const provider = watchProvider?.map((item) => {
-    {
-      return (
-        <img
-          className="logo-provider"
-          src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
-        ></img>
-      );
-    }
-  });*/
 
   function handleReviewClick() {
     setShowReviews((previousValue) => !previousValue);
@@ -99,12 +79,27 @@ const MovieDetails = () => {
               </span>
             </span>
           </p>
+          <p>
+            <span>🍿</span>
+            <strong className="grayish-text"> Release Date:</strong>{" "}
+            <span className="grayish-text">{location.state.releaseDate}</span>
+          </p>
           <br />
 
-          <div className="trailer-container" onClick={handleShowTrailer}>
-            <h4>Watch Trailer</h4>
-            {showTrailer && officialTrailer}
-          </div>
+          {officialTrailer.length > 0 ? (
+            <div className="trailer-container" onClick={handleShowTrailer}>
+              {officialTrailer.length > 1 ? (
+                <h4>Official Trailers</h4>
+              ) : (
+                <h4>Official Trailer</h4>
+              )}
+              {showTrailer && officialTrailer}
+            </div>
+          ) : (
+            <div className="no-trailer-container">
+              <h4>No official trailer</h4>
+            </div>
+          )}
         </div>
       </div>
       {showReviews && <div className="reviews-container">hello</div>}
