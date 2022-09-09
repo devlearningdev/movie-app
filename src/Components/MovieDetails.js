@@ -9,6 +9,11 @@ import axios from "axios";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+////////////////////////////////////////////////////////////////////
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -54,44 +59,103 @@ const MovieDetails = () => {
 
   //console.log(reviews);
 
+  const spammer = "MSB"; //Spammer on TMDB
+
   const displayReviews = reviews.map((item) => {
+    console.log(item.author_details.rating);
+
     return (
-      <fieldset>
-        <legend className="pseudo">
-          <strong>{item.author}'s review : </strong>
-          <span
-            className={
-              item.author_details.rating >= 7.5
-                ? "review-note-green"
-                : item.author_details.rating <= 7.5 &&
-                  item.author_details.rating >= 6
-                ? "review-note-orange"
-                : "review-note-red"
-            }
-          >
-            {item.author_details.rating} /10
-          </span>
-        </legend>
-        <FontAwesomeIcon icon={faQuoteLeft} className="guillemet">
-          {" "}
-        </FontAwesomeIcon>
-        <span> </span>
-        <i>{item.content}</i>
-        <span> </span>
-        <FontAwesomeIcon
-          icon={faQuoteRight}
-          className="guillemet"
-        ></FontAwesomeIcon>
-      </fieldset>
+      item.author != spammer && ( //Review spammer named "MSB" filtered
+        <fieldset>
+          <legend className="pseudo">
+            <strong>{item.author}'s review : </strong>
+            <span
+              className={
+                item.author_details.rating >= 7.5
+                  ? "review-note-green"
+                  : item.author_details.rating <= 7.5 &&
+                    item.author_details.rating >= 6
+                  ? "review-note-orange"
+                  : "review-note-red"
+              }
+            >
+              {item.author_details.rating
+                ? `${item.author_details.rating} /10`
+                : "no note"}
+            </span>
+          </legend>
+          <FontAwesomeIcon icon={faQuoteLeft} className="guillemet">
+            {" "}
+          </FontAwesomeIcon>
+          <span> </span>
+          <i>{item.content}</i>
+          <span> </span>
+          <FontAwesomeIcon
+            icon={faQuoteRight}
+            className="guillemet"
+          ></FontAwesomeIcon>
+        </fieldset>
+      )
     );
   });
 
-  function handleReviewClick() {
-    setShowReviews((previousValue) => !previousValue);
-  }
-
   function handleShowTrailer() {
     setShowTrailer((previousValue) => !previousValue);
+  }
+
+  const style = {
+    position: "absolute",
+    top: "40%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "auto",
+    bgcolor: "rgba(0, 0, 0, 0.833)",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 0,
+    borderRadius: 3,
+  };
+
+  function BasicModal() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    return (
+      <div>
+        💭
+        <span
+          onClick={reviews.length > 0 && handleOpen}
+          className="reviews-word"
+        >
+          {" "}
+          {reviews.length > 0
+            ? ` ${
+                spammer ? reviews.length - 1 : reviews.length //removing spammer from the counter
+              } persons reviewed this movie`
+            : "No review available"}
+        </span>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            {/*<Typography id="modal-modal-title" variant="h6" component="h2">
+              Text in a modal
+    </Typography>*/}
+            <Typography
+              id="modal-modal-description"
+              className="reviews-container "
+              sx={{ mt: 2 }}
+            >
+              {displayReviews}
+            </Typography>
+          </Box>
+        </Modal>
+      </div>
+    );
   }
 
   return (
@@ -116,11 +180,8 @@ const MovieDetails = () => {
             <span>
               ⭐ {location.state.rating.toFixed(1)}{" "}
               <span className="grayish-text">
-                / <strong>10 </strong> (
-                <u className="reviews-word" onClick={handleReviewClick}>
-                  {location.state.reviewNumber} reviews
-                </u>
-                )
+                {" "}
+                / <strong>10 </strong> ( {location.state.reviewNumber} notes)
               </span>
             </span>
           </p>
@@ -130,6 +191,7 @@ const MovieDetails = () => {
             <strong> Release Date:</strong>{" "}
             <span className="grayish-text">{location.state.releaseDate}</span>
           </p>
+          <BasicModal />
           <br />
           {officialTrailer.length > 0 ? (
             <div className="trailer-container" onClick={handleShowTrailer}>
@@ -147,9 +209,6 @@ const MovieDetails = () => {
           )}
         </div>
       </div>
-      {reviews.length > 0 && showReviews && (
-        <div className="reviews-container">{displayReviews}</div>
-      )}
     </div>
   );
 };

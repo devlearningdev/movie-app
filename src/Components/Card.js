@@ -42,7 +42,7 @@ const Card = (props) => {
   // // // // // // // // // // // // // // // // // // // // // //////
 
   return (
-    <div key={props.item.id} className="movie-card">
+    <div key={props.item.id} className="movie-card bg-blur">
       <FontAwesomeIcon
         icon={faBookmark}
         onClick={handleBookmarkColor}
