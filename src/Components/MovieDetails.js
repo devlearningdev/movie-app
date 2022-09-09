@@ -59,43 +59,39 @@ const MovieDetails = () => {
 
   //console.log(reviews);
 
-  const spammer = "MSB"; //Spammer on TMDB
-
   const displayReviews = reviews.map((item) => {
     console.log(item.author_details.rating);
 
     return (
-      item.author != spammer && ( //Review spammer named "MSB" filtered
-        <fieldset>
-          <legend className="pseudo">
-            <strong>{item.author}'s review : </strong>
-            <span
-              className={
-                item.author_details.rating >= 7.5
-                  ? "review-note-green"
-                  : item.author_details.rating <= 7.5 &&
-                    item.author_details.rating >= 6
-                  ? "review-note-orange"
-                  : "review-note-red"
-              }
-            >
-              {item.author_details.rating
-                ? `${item.author_details.rating} /10`
-                : "no note"}
-            </span>
-          </legend>
-          <FontAwesomeIcon icon={faQuoteLeft} className="guillemet">
-            {" "}
-          </FontAwesomeIcon>
-          <span> </span>
-          <i>{item.content}</i>
-          <span> </span>
-          <FontAwesomeIcon
-            icon={faQuoteRight}
-            className="guillemet"
-          ></FontAwesomeIcon>
-        </fieldset>
-      )
+      <fieldset>
+        <legend className="pseudo">
+          <strong>{item.author}'s review : </strong>
+          <span
+            className={
+              item.author_details.rating >= 7.5
+                ? "review-note-green"
+                : item.author_details.rating <= 7.5 &&
+                  item.author_details.rating >= 6
+                ? "review-note-orange"
+                : "review-note-red"
+            }
+          >
+            {item.author_details.rating
+              ? `${item.author_details.rating} /10`
+              : "no note"}
+          </span>
+        </legend>
+        <FontAwesomeIcon icon={faQuoteLeft} className="guillemet">
+          {" "}
+        </FontAwesomeIcon>
+        <span> </span>
+        <i>{item.content}</i>
+        <span> </span>
+        <FontAwesomeIcon
+          icon={faQuoteRight}
+          className="guillemet"
+        ></FontAwesomeIcon>
+      </fieldset>
     );
   });
 
@@ -130,9 +126,7 @@ const MovieDetails = () => {
         >
           {" "}
           {reviews.length > 0
-            ? ` ${
-                spammer ? reviews.length - 1 : reviews.length //removing spammer from the counter
-              } persons reviewed this movie`
+            ? ` ${reviews.length} persons reviewed this movie`
             : "No review available"}
         </span>
         <Modal
