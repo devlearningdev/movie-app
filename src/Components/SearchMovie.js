@@ -28,7 +28,7 @@ const SearchMovie = () => {
         `https://api.themoviedb.org/3/search/movie?api_key=b28a53f206c15a63a8c1de7477017045&query=${request}`
       )
       .then((res) => setMovieList(res.data.results));
-  });
+  }, [request]);
 
   const movieToShow = movieList.map((item) => {
     if (item.poster_path) {
@@ -50,9 +50,9 @@ const SearchMovie = () => {
         <div className={!request && "search-div"}>
           <div className="title-div">
             {movieList.length > 0 ? (
-              <h3 className="title.div">Results for "{request}":</h3>
+              <h3 className="title-div">Results for "{request}":</h3>
             ) : (
-              <h3 className="title.div">Sorry, no results for "{request}"</h3>
+              <h3 className="title-div">Sorry, no results for "{request}"</h3>
             )}
           </div>
           {movieList.length > 0 ? (

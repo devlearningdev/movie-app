@@ -8,13 +8,16 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TrendingMovies = () => {
   const [trendingMovies, setTrendingMovies] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     axios
       .get(
         "https://api.themoviedb.org/3/trending/all/week?api_key=b28a53f206c15a63a8c1de7477017045"
       )
-      .then((res) => setTrendingMovies(res.data.results));
+      .then((res) => {
+        setTrendingMovies(res.data.results);
+      });
   }, []);
 
   //MAP

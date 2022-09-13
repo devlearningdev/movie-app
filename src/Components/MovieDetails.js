@@ -60,25 +60,23 @@ const MovieDetails = () => {
   //console.log(reviews);
 
   const displayReviews = reviews.map((item) => {
-    console.log(item.author_details.rating);
-
     return (
       <fieldset>
         <legend className="pseudo">
           <strong>{item.author}'s review : </strong>
           <span
             className={
-              item.author_details.rating >= 7.5
-                ? "review-note-green"
-                : item.author_details.rating <= 7.5 &&
-                  item.author_details.rating >= 6
-                ? "review-note-orange"
-                : "review-note-red"
+              item.author_details.rating != null
+                ? item.author_details.rating >= 7.5
+                  ? "review-note-green"
+                  : item.author_details.rating <= 7.5 &&
+                    item.author_details.rating >= 6
+                  ? "review-note-orange"
+                  : "review-note-red"
+                : ""
             }
           >
-            {item.author_details.rating
-              ? `${item.author_details.rating} /10`
-              : "no note"}
+            {item.author_details.rating && `${item.author_details.rating} /10`}
           </span>
         </legend>
         <FontAwesomeIcon icon={faQuoteLeft} className="guillemet">
@@ -122,11 +120,15 @@ const MovieDetails = () => {
         💭
         <span
           onClick={reviews.length > 0 && handleOpen}
-          className="reviews-word"
+          className={
+            reviews.length > 0 ? "reviews-word" : "reviews-word-disabled"
+          }
         >
           {" "}
           {reviews.length > 0
-            ? ` ${reviews.length} persons reviewed this movie`
+            ? reviews.length > 1
+              ? ` ${reviews.length} persons reviewed this movie`
+              : ` ${reviews.length} person reviewed this movie`
             : "No review available"}
         </span>
         <Modal
@@ -157,9 +159,10 @@ const MovieDetails = () => {
       <Navbar />
 
       <div className="parent">
+        {" "}
         <div className="div1">
           <img
-            src={`https://image.tmdb.org/t/p/original${location.state.img}`}
+            src={`https://image.tmdb.org/t/p/w1280/${location.state.img}`}
             className="movie-details-image"
           ></img>
         </div>

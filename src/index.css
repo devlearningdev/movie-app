@@ -183,8 +183,8 @@ li:hover {
   border: 1.5px solid;
   border-color: rgba(55, 55, 55, 0.599);
   box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.738);
-  margin-right: 7%;
-  margin-left: 7%;
+  margin-right: 4rem;
+  margin-left: 4rem;
 }
 
 .search-movie-card {
@@ -288,6 +288,11 @@ input:focus {
 
 .reviews-word {
   cursor: pointer;
+}
+
+.reviews-word-disabled {
+  color: #545454;
+  cursor: default;
 }
 
 .reviews-word:hover {
@@ -411,31 +416,21 @@ fieldset {
 }
 
 .review-note-green {
-  border: 1px solid rgba(255, 255, 255, 0.733);
-  padding: 0px 5px;
-  border-radius: 10px;
-  background-color: rgba(0, 255, 0, 0.49);
+  border: 2px solid rgba(0, 255, 0, 0.49);
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 .review-note-orange {
-  border: 1px solid rgba(255, 255, 255, 0.733);
-  padding: 0px 5px;
-  border-radius: 10px;
-  background-color: rgb(255, 166, 0);
+  border: 2px solid rgb(255, 166, 0);
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 .review-note-red {
-  border: 1px solid rgba(255, 255, 255, 0.733);
-  padding: 0px 5px;
-  border-radius: 10px;
-  background-color: rgb(255, 0, 0);
-}
-
-.review-note-nul {
-  border: 1px solid rgba(255, 255, 255, 0.733);
-  padding: 0px 5px;
-  border-radius: 10px;
-  background-color: rgb(182, 182, 182);
+  border: 2px solid rgb(255, 0, 0);
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 .trailer-container {

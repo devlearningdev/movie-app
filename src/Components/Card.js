@@ -50,7 +50,7 @@ const Card = (props) => {
       ></FontAwesomeIcon>
       <img
         className="movie-img"
-        src={`https://image.tmdb.org/t/p/w500/${props.item.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w300/${props.item.poster_path}`}
         onClick={() => {
           weNavigate();
         }}

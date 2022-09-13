@@ -6,18 +6,19 @@ import { faRemove } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Favorites() {
-  const { favoriteArray } = React.useContext(FavoriteContext);
-  const { removeFromFavorites } = React.useContext(FavoriteContext);
+  const { favoriteArray, setFavoriteArray } = React.useContext(FavoriteContext);
 
   ////////////////////////////////////////////////////////////////////////////
 
+  function handleRemove(id) {
+    //favoriteArray.pop();
+    console.log(id);
+    const newList = favoriteArray.filter((item) => item.id !== id);
+    setFavoriteArray(newList);
+  }
+
   const favoritedMovies = favoriteArray.map((item) => {
     // delete a favorited:
-    function handleRemove() {
-      console.log(item.movie.id);
-      //favoriteArray.pop();
-      removeFromFavorites();
-    }
 
     //Displaying array of favorites:
     return (
@@ -25,7 +26,7 @@ function Favorites() {
         <FontAwesomeIcon
           icon={faRemove}
           className="remove-cross"
-          onClick={handleRemove}
+          onClick={() => handleRemove(item.movie.id)}
         ></FontAwesomeIcon>
 
         <img
