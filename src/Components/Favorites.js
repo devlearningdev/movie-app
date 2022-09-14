@@ -10,23 +10,25 @@ function Favorites() {
 
   ////////////////////////////////////////////////////////////////////////////
 
-  function handleRemove(id) {
-    //favoriteArray.pop();
-    console.log(id);
-    const newList = favoriteArray.filter((item) => item.id !== id);
-    setFavoriteArray(newList);
-  }
-
   const favoritedMovies = favoriteArray.map((item) => {
-    // delete a favorited:
+    function handleRemove() {
+      //console.log(item.movie.id);
+      console.log(item.movie.id);
+
+      /* setFavoriteArray((current) =>
+        current.filter((film) => {
+          return film.movie.id !== 532639;
+        })
+      );*/
+    }
 
     //Displaying array of favorites:
     return (
-      <div className="movie-card">
+      <div className="movie-card" key={item.movie.id}>
         <FontAwesomeIcon
           icon={faRemove}
           className="remove-cross"
-          onClick={() => handleRemove(item.movie.id)}
+          onClick={handleRemove}
         ></FontAwesomeIcon>
 
         <img
