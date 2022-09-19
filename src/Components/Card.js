@@ -39,7 +39,25 @@ const Card = (props) => {
     //!isFavorite && addToFavorites(props.item);
   }
 
-  // // // // // // // // // // // // // // // // // // // // // //////
+  /*function handleBookmarkColor() {
+    setIsFavorite((previousValue) => !previousValue);
+    console.log(props.item.id);
+
+    if (isFavorite === false) {
+      addToFavorites(props.item);
+    }
+  }
+
+  const [isFavorite, setIsFavorite] = React.useState(() => {
+    const saved = localStorage.getItem("isFavorite");
+    const initialValue = JSON.parse(saved);
+    console.log(initialValue);
+    return initialValue;
+  });
+
+  React.useEffect(() => {
+    localStorage.setItem("isFavorite", JSON.stringify(isFavorite));
+  }, [isFavorite]);*/
 
   return (
     <div key={props.item.id} className="movie-card bg-blur">

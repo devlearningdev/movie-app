@@ -18,6 +18,8 @@ const SearchMovie = () => {
     localStorage.setItem("request", JSON.stringify(request));
   }, [request]);
 
+  //
+
   function handleChange(event) {
     return setRequest(event.target.value);
   }

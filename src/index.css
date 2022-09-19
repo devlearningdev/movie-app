@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(15, 15, 15, 0.896);
+  background-color: #02000d;
 
   color: rgba(255, 255, 255, 0.92);
 }
@@ -42,7 +42,7 @@ code {
   border-radius: 10px;
   border: 1.5px solid rgba(255, 255, 255, 0.104);
   justify-content: center;
-  background-color: #202020;
+  background-color: #12101d;
 }
 
 .movie-img {
@@ -61,12 +61,12 @@ code {
   margin: 10px;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.738);
   transition: transform 0.3s;
-  background-color: rgb(40, 40, 40);
+  background-color: #12101d;
 
   max-width: 200px;
   min-width: 200px;
 
-  border: 1px solid rgba(61, 61, 61, 0.664);
+  border: 1px solid rgba(31, 31, 59, 0.689);
   border-radius: 5px;
 
   /*BACKGROUND DE OUF */
@@ -89,7 +89,7 @@ code {
   -ms-transform: scale(1.05); /* IE 9 */
   -webkit-transform: scale(1.05); /* Safari 3-8 */
   transform: scale(1.04);
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.42);
+  box-shadow: 1px 1px 10px 2px rgba(164, 164, 255, 0.398);
 }
 
 .navbar {
@@ -98,12 +98,7 @@ code {
   justify-content: space-between;
   height: 60px;
   width: 100%;
-  background: rgb(32, 32, 32);
-  background: linear-gradient(
-    180deg,
-    rgba(32, 32, 32, 1) 43%,
-    rgba(32, 32, 32, 0.7763480392156863) 100%
-  );
+  background-color: rgb(12, 12, 26);
 
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.628);
   border-bottom: 1px solid rgba(255, 255, 255, 0.037);
@@ -249,7 +244,8 @@ input:focus {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   /*border: 1px solid rgba(96, 96, 96, 0.17);*/
-  border-bottom: 3px solid rgba(255, 0, 0, 0.862);
+  border-bottom: 3px solid rgb(164, 164, 255);
+
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
@@ -384,7 +380,7 @@ input:focus {
 
   /*background-color: #202020;*/
   /*background-color: rgb(42, 47, 58);*/
-  background-color: #202020;
+  background-color: #12101d;
   border-radius: 10px;
   border: 1.5px solid;
   border-color: rgba(55, 55, 55, 0.599);
@@ -399,7 +395,7 @@ input:focus {
 .reviews-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #12101d;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.843);
   max-width: 1100px;
@@ -413,7 +409,7 @@ fieldset {
   color: rgba(255, 255, 255, 0.763);
   border-color: rgba(155, 155, 155, 0.58);
   border-width: 1px;
-  background-color: #202020;
+  background-color: #12101d;
 }
 
 .review-note-green {
@@ -449,7 +445,7 @@ fieldset {
 }
 
 .trailer-container:hover {
-  background-color: rgba(57, 57, 57, 0.992);
+  background-color: #2a273a;
 }
 
 .no-trailer-container {
@@ -516,7 +512,7 @@ fieldset {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(32, 32, 32);
+  background: rgb(12, 12, 26);
   color: rgba(255, 255, 255, 0.219);
   margin-top: 8rem;
   border-top: 1px solid rgba(255, 255, 255, 0.057);

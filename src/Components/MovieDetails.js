@@ -14,6 +14,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Loading from "./Loading";
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const MovieDetails = () => {
   const [reviews, setReviews] = React.useState([]);
   const [showReviews, setShowReviews] = React.useState(false);
   const [showTrailer, setShowTrailer] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     axios
@@ -127,9 +129,9 @@ const MovieDetails = () => {
           {" "}
           {reviews.length > 0
             ? reviews.length > 1
-              ? ` ${reviews.length} persons reviewed this movie`
-              : ` ${reviews.length} person reviewed this movie`
-            : "No review available"}
+              ? ` ${reviews.length} persons reviewed this movie.`
+              : ` ${reviews.length} person reviewed this movie.`
+            : "No review available."}
         </span>
         <Modal
           open={open}
@@ -186,7 +188,11 @@ const MovieDetails = () => {
           <p>
             <span>🍿</span>
             <strong> Release Date:</strong>{" "}
-            <span className="grayish-text">{location.state.releaseDate}</span>
+            <span className="grayish-text">
+              {location.state.releaseDate
+                ? location.state.releaseDate + "."
+                : "Unknown"}{" "}
+            </span>
           </p>
           <BasicModal />
           <br />

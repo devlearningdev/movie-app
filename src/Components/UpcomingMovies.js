@@ -4,16 +4,21 @@ import Card from "./Card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Loading from "./Loading";
 
 const UpcomingMovies = () => {
   const [upcomingMovies, setUpcomingMovies] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     axios
       .get(
         "https://api.themoviedb.org/3/movie/upcoming?api_key=b28a53f206c15a63a8c1de7477017045&language=en-US&page=1"
       )
-      .then((res) => setUpcomingMovies(res.data.results));
+      .then((res) => {
+        setUpcomingMovies(res.data.results);
+        setLoading(true);
+      });
   }, []);
 
   const upComing = upcomingMovies.map((item) => {
@@ -147,7 +152,7 @@ const UpcomingMovies = () => {
       </div>
       {/*<div className="trending-movies-container">{upComing}</div>*/}
       <div className="slider-container">
-        <SimpleSlider />
+        {loading ? <SimpleSlider /> : <Loading />}
       </div>
     </div>
   );
