@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #02000d;
+  background-color: #02000de5;
 
   color: rgba(255, 255, 255, 0.92);
 }
@@ -37,6 +37,7 @@ code {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
+
   margin-left: 7%;
   margin-right: 7%;
   border-radius: 10px;
@@ -59,7 +60,7 @@ code {
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.738);
+  box-shadow: 1px 1px 5px 1px rgba(164, 164, 255, 0.084);
   transition: transform 0.3s;
   background-color: #12101d;
 
@@ -100,7 +101,7 @@ code {
   width: 100%;
   background-color: rgb(12, 12, 26);
 
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.628);
+  box-shadow: 1px 1px 10px 1px rgba(164, 164, 255, 0.074);
   border-bottom: 1px solid rgba(255, 255, 255, 0.037);
 
   /*Sticky Navbar*/
@@ -172,11 +173,11 @@ li:hover {
   justify-content: center;
   padding: 0.3rem;
   margin: auto;
-  background-color: #202020;
+  background-color: #12101d;
   border-radius: 10px;
   border: 1.5px solid;
-  border-color: rgba(55, 55, 55, 0.599);
-  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.738);
+  border-color: rgba(31, 31, 59, 0.689);
+  box-shadow: 1px 1px 50px 1px rgba(255, 255, 255, 0.101);
   margin-right: 4rem;
   margin-left: 4rem;
 }
@@ -383,8 +384,8 @@ input:focus {
   background-color: #12101d;
   border-radius: 10px;
   border: 1.5px solid;
-  border-color: rgba(55, 55, 55, 0.599);
-  box-shadow: 1px 1px 50px 1px rgba(0, 0, 0, 0.738);
+  border-color: rgba(31, 31, 59, 0.689);
+  box-shadow: 1px 1px 50px 1px rgba(255, 255, 255, 0.101);
   color: rgba(255, 255, 255, 0.843);
 }
 

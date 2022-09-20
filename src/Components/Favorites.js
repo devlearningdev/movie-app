@@ -10,16 +10,15 @@ function Favorites() {
 
   ////////////////////////////////////////////////////////////////////////////
 
+  //Removing a movie from favorite Array:
   const favoritedMovies = favoriteArray.map((item) => {
     function handleRemove() {
-      //console.log(item.movie.id);
-      console.log(item.movie.id);
+      //alert(item.movie.id);
 
-      /* setFavoriteArray((current) =>
-        current.filter((film) => {
-          return film.movie.id !== 532639;
-        })
-      );*/
+      const newArray = favoriteArray.filter(
+        (film) => film.movie.id !== item.movie.id
+      );
+      setFavoriteArray(newArray);
     }
 
     //Displaying array of favorites:
