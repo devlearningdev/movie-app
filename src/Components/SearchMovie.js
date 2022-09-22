@@ -46,7 +46,7 @@ const SearchMovie = () => {
           type="text"
           value={request}
           onChange={handleChange}
-          placeholder="Movie/Serie/TV Show"
+          placeholder="Search a movie"
         ></input>
 
         <div className={!request && "search-div"}>

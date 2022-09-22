@@ -12,8 +12,17 @@ function Favorites() {
 
   //Removing a movie from favorite Array:
   const favoritedMovies = favoriteArray.map((item) => {
+    function handleRemove() {
+      //alert(item.movie.id);
+
+      const newArray = favoriteArray.filter(
+        (film) => film.movie.id !== item.movie.id
+      );
+      setFavoriteArray(newArray);
+    }
+
     //Navigation:
-    const navigate = useNavigate();
+    /*const navigate = useNavigate();
 
     function weNavigate() {
       return navigate(`/movie-details/`, {
@@ -27,16 +36,7 @@ function Favorites() {
           releaseDate: item.movie.release_date || item.movie.first_air_date,
         },
       });
-    }
-
-    function handleRemove() {
-      //alert(item.movie.id);
-
-      const newArray = favoriteArray.filter(
-        (film) => film.movie.id !== item.movie.id
-      );
-      setFavoriteArray(newArray);
-    }
+    }*/
 
     //Displaying array of favorites:
     return (
@@ -62,9 +62,9 @@ function Favorites() {
     <div>
       <Navbar />
       {favoriteArray.length === 0 ? (
-        <h3 className="title-div">You don't have any favorites</h3>
+        <p className="favorites-title">You don't have any favorites</p>
       ) : (
-        <h3 className="title-div">Your favorites</h3>
+        <p className="favorites-title">Your favorites</p>
       )}
       {favoriteArray.length > 0 && (
         <div className="favorite-movies-container">{favoritedMovies}</div>

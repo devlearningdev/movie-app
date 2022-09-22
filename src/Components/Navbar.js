@@ -13,7 +13,12 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <NavLink className="" id="navlink" to="/">
-        <h2 className="logo">Movie App |</h2>
+        <img
+          src="https://i.ibb.co/0BkfXdV/newlogo.png"
+          width="60px"
+          height="60px"
+          className="logo"
+        ></img>
       </NavLink>
 
       <ul>
