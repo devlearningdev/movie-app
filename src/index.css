@@ -38,11 +38,11 @@ code {
   flex-wrap: wrap;
   padding: 20px;
 
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 2%;
+  margin-right: 2%;
   border-radius: 10px;
   border: 1.5px solid rgba(255, 255, 255, 0.104);
-  justify-content: center;
+
   background-color: #12101d;
 }
 

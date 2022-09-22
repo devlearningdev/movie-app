@@ -12,6 +12,23 @@ function Favorites() {
 
   //Removing a movie from favorite Array:
   const favoritedMovies = favoriteArray.map((item) => {
+    //Navigation:
+    const navigate = useNavigate();
+
+    function weNavigate() {
+      return navigate(`/movie-details/`, {
+        state: {
+          id: item.movie.id,
+          title: item.movie.name || item.movie.title,
+          img: item.movie.poster_path,
+          overview: item.movie.overview,
+          rating: item.movie.vote_average,
+          reviewNumber: item.movie.vote_count,
+          releaseDate: item.movie.release_date || item.movie.first_air_date,
+        },
+      });
+    }
+
     function handleRemove() {
       //alert(item.movie.id);
 
@@ -47,7 +64,7 @@ function Favorites() {
       {favoriteArray.length === 0 ? (
         <h3 className="title-div">You don't have any favorites</h3>
       ) : (
-        <h3 className="title-div">Your favorite content :</h3>
+        <h3 className="title-div">Your favorites</h3>
       )}
       {favoriteArray.length > 0 && (
         <div className="favorite-movies-container">{favoritedMovies}</div>
