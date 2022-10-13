@@ -35,7 +35,9 @@ const Card = (props) => {
 
     if (isFavorite === false) {
       addToFavorites(props.item);
+      console.log(props.item.id);
     }
+
     //!isFavorite && addToFavorites(props.item);
   }
 

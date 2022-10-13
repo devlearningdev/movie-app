@@ -219,8 +219,7 @@ li:hover {
   justify-content: center;
   align-items: center;
   width: 200px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
+
   padding: 10px;
   margin: 1% auto;
   color: rgba(255, 255, 255, 0.394);
@@ -571,6 +570,19 @@ fieldset {
     max-width: 160px;
     min-width: 160px;
   }
+  .div1 {
+    max-width: 400px;
+  }
+  .div2 {
+    max-width: 400px;
+  }
+  .movie-details-image {
+    max-width: 400px;
+  }
+
+  .parent {
+    max-width: 800px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -618,6 +630,20 @@ fieldset {
   .movie-card {
     max-width: 130px;
     min-width: 130px;
+  }
+
+  .div1 {
+    max-width: 300px;
+  }
+  .div2 {
+    max-width: 300px;
+  }
+  .movie-details-image {
+    max-width: 300px;
+  }
+
+  .parent {
+    max-width: 600px;
   }
 }
 
@@ -746,7 +772,7 @@ fieldset {
   }
 
   .navbar {
-    height: 40px;
+    height: 60px;
   }
 
   .logo {

@@ -15,6 +15,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Loading from "./Loading";
+import Rating from "@mui/material/Rating";
+import Stack from "@mui/material/Stack";
+import StarIcon from "@mui/icons-material/Star";
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -183,6 +186,18 @@ const MovieDetails = () => {
                 / <strong>10 </strong> ( {location.state.reviewNumber} notes)
               </span>
             </span>
+            {/*<Stack spacing={1}>
+              <Rating
+                name="half-rating-read"
+                defaultValue={Number(location.state.rating.toFixed(1) / 2)}
+                precision={0.01}
+                readOnly
+                emptyIcon={
+                  <StarIcon style={{ opacity: 0.5 }} fontSize="inherit" />
+                }
+                styles={{ color: "green" }}
+              />
+              </Stack>*/}
           </p>
 
           <p>
