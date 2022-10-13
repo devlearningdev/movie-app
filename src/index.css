@@ -776,13 +776,13 @@ fieldset {
   }
 
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   li {
-    height: 40px;
-    width: 60px;
+    height: 60px;
+    width: 80px;
   }
   .title-div {
     font-size: 12px;
@@ -790,6 +790,10 @@ fieldset {
 
   .parent {
     margin: 1rem 1rem;
+  }
+
+  .textColor {
+    background-color: rgb(12, 12, 26);
   }
 }
 
