@@ -119,7 +119,7 @@ const TrendingMovies = () => {
         },
 
         {
-          breakpoint: 400,
+          breakpoint: 450,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
