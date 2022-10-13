@@ -765,6 +765,10 @@ fieldset {
     max-width: 120px;
     min-width: 120px;
   }
+  .title-div {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -829,6 +833,9 @@ fieldset {
   .movie-card {
     max-width: 140px;
     min-width: 140px;
+  }
+  .title-div {
+    color: rgba(255, 255, 255, 0.854);
   }
 }
 
