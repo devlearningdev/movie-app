@@ -32,6 +32,7 @@ const TrendingMovies = () => {
       speed: 500,
       slidesToShow: 15,
       slidesToScroll: 15,
+      padding: 0,
 
       responsive: [
         {
