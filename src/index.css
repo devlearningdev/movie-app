@@ -795,6 +795,11 @@ fieldset {
   .textColor {
     background-color: rgb(12, 12, 26);
   }
+
+  .movie-card {
+    max-width: 140px;
+    min-width: 140px;
+  }
 }
 
 /* //////////////////// MEDIA QUERIES ////////////////////////*/
