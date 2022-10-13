@@ -801,6 +801,8 @@ fieldset {
 
   .textColor {
     background-color: rgb(12, 12, 26);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
 
   .movie-card {
