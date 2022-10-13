@@ -121,6 +121,13 @@ const UpcomingMovies = () => {
         {
           breakpoint: 450,
           settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          },
+        },
+        {
+          breakpoint: 400,
+          settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
           },

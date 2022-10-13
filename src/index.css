@@ -807,8 +807,8 @@ fieldset {
   }
 
   .movie-card {
-    max-width: 160px;
-    min-width: 160px;
+    max-width: 110px;
+    min-width: 110px;
   }
 
   .movie-card:hover {
@@ -821,8 +821,8 @@ fieldset {
 
 @media screen and (max-width: 400px) {
   .movie-card {
-    max-width: 130px;
-    min-width: 130px;
+    max-width: 140px;
+    min-width: 140px;
   }
 }
 
