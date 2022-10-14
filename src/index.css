@@ -354,12 +354,33 @@ input:focus {
   width: 100%;
 }*/
 
-/*.hero-container {
-  background-color: aqua;
-  height: 50vh;
+.hero-container {
+  display: flex;
+  position: relative;
+  max-height: 35vh;
+  flex-direction: column;
 }
 
-.hero-image {
+.hero-img {
+  object-fit: cover;
+  max-height: 35vh;
+
+  /*filter: blur(2px);*/
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 1rem;
+  position: absolute;
+  margin: 0 2rem;
+  background-color: rgb(87, 81, 104);
+
+  border-radius: 10px;
+}
+/*.hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
