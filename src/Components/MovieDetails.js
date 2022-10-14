@@ -107,7 +107,7 @@ const MovieDetails = () => {
     top: "40%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "auto",
+    width: "80%",
     bgcolor: "rgba(0, 0, 0, 0.833)",
     border: "2px solid #000",
     boxShadow: 24,
