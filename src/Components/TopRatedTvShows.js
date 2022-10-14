@@ -151,7 +151,7 @@ const TopRatedTvShows = () => {
   return (
     <div className="top-rated-container">
       <div className="title-div">
-        <h3>⭐ Top Rated</h3>
+        <h3>Top Rated</h3>
       </div>
       {/*<div className="trending-movies-container">{movieToShow}</div>*/}
       <div className="slider-container">

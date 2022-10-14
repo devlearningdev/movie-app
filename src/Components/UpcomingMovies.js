@@ -155,7 +155,7 @@ const UpcomingMovies = () => {
   return (
     <div>
       <div className="title-div">
-        <h3>⏳ Upcoming Movies</h3>
+        <h3>Upcoming Movies</h3>
       </div>
       {/*<div className="trending-movies-container">{upComing}</div>*/}
       <div className="slider-container">

@@ -157,7 +157,7 @@ const TrendingMovies = () => {
   return (
     <div>
       <div className="title-div">
-        <h3>🚀 Trending this week</h3>
+        <h3>Trending this week</h3>
       </div>
       {/*<div className="trending-movies-container">{movieToShow}</div>*/}
       <div className="slider-container">

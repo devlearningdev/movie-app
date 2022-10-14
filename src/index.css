@@ -819,6 +819,7 @@ fieldset {
   .movie-card {
     max-width: 110px;
     min-width: 110px;
+    box-shadow: 0px 0px 0px 0px rgba(164, 164, 255, 0.084);
   }
 
   .movie-card:hover {
@@ -833,6 +834,7 @@ fieldset {
   .movie-card {
     max-width: 140px;
     min-width: 140px;
+    box-shadow: 0px 0px 0px 0px rgba(164, 164, 255, 0.084);
   }
   .title-div {
     color: rgba(255, 255, 255, 0.854);
